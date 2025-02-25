@@ -30,13 +30,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               href="/boats"
               className="text-sm font-medium hover:text-primary"
             >
-              Find Boats
+              Boats
             </Link>
             <Link
               href="/captains"
               className="text-sm font-medium hover:text-primary"
             >
-              Find Captains
+              Captains
             </Link>
             <Link
               href="/dashboard/owner"
@@ -93,14 +93,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 className="text-sm font-medium hover:text-primary"
                 onClick={() => setIsOpen(false)}
               >
-                Find Boats
+                Boats
               </Link>
               <Link
                 href="/captains"
                 className="text-sm font-medium hover:text-primary"
                 onClick={() => setIsOpen(false)}
               >
-                Find Captains
+                Captains
               </Link>
               <Link
                 href="/dashboard/owner"
