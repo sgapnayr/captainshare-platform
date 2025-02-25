@@ -22,8 +22,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Layout from "@/components/layout";
 import Captain1 from "../../../../assets/captain-1.jpg";
+import DashboardLayout from "@/components/dashboard-layout";
 
 const captain = {
   id: "1",
@@ -120,7 +120,7 @@ const captain = {
 
 export default function CaptainProfilePage() {
   return (
-    <Layout>
+    <DashboardLayout>
       <div className="relative">
         {/* Cover Image */}
         <div className="relative h-[300px] w-full">
@@ -367,6 +367,6 @@ export default function CaptainProfilePage() {
           </div>
         </div>
       </div>
-    </Layout>
+    </DashboardLayout>
   );
 }

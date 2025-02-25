@@ -6,10 +6,10 @@ import Link from "next/link";
 import { Search, MapPin, Star, Clock, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import Layout from "@/components/layout";
 import Captain1 from "../../../assets/captain-1.jpg";
 import Captain2 from "../../../assets/captain-2.jpg";
 import Captain3 from "../../../assets/captain-3.jpg";
+import DashboardLayout from "@/components/dashboard-layout";
 
 // Sample data - would come from API in real app
 const captains = [
@@ -71,7 +71,7 @@ export default function CaptainsPage() {
   );
 
   return (
-    <Layout>
+    <DashboardLayout>
       <div className="container py-10">
         <div className="mb-8 space-y-4">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">
@@ -171,6 +171,6 @@ export default function CaptainsPage() {
           ))}
         </div>
       </div>
-    </Layout>
+    </DashboardLayout>
   );
 }

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Ship, Upload, DollarSign, MapPin } from "lucide-react";
+import { Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,7 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import Layout from "@/components/layout";
+import DashboardLayout from "@/components/dashboard-layout";
 
 export default function AddBoatPage() {
   const router = useRouter();
@@ -30,7 +30,7 @@ export default function AddBoatPage() {
   };
 
   return (
-    <Layout>
+    <DashboardLayout>
       <div className="container max-w-2xl py-10 mx-auto">
         <div className="mb-8">
           <h1 className="text-3xl font-bold">Add Your Boat</h1>
@@ -112,6 +112,6 @@ export default function AddBoatPage() {
           </Button>
         </form>
       </div>
-    </Layout>
+    </DashboardLayout>
   );
 }

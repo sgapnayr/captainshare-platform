@@ -1,11 +1,10 @@
 import Image from "next/image";
 import { Calendar, MapPin, Anchor, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Layout from "@/components/layout";
 import Boat1 from "../../../../assets/boat-1.jpg";
 import Boat2 from "../../../../assets/boat-2.jpg";
 import Boat3 from "../../../../assets/boat-3.jpg";
-
+import DashboardLayout from "@/components/dashboard-layout";
 // Sample data - in a real app, this would come from an API based on the ID
 const boat = {
   id: "1",
@@ -29,7 +28,7 @@ const boat = {
 
 export default function BoatDetailsPage() {
   return (
-    <Layout>
+    <DashboardLayout>
       <div className="container py-10">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="space-y-4">
@@ -102,6 +101,6 @@ export default function BoatDetailsPage() {
           </div>
         </div>
       </div>
-    </Layout>
+    </DashboardLayout>
   );
 }

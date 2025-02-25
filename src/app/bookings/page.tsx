@@ -11,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import Layout from "@/components/layout";
+import DashboardLayout from "@/components/dashboard-layout";
 
 // Sample data - would come from API
 const bookings = [
@@ -64,7 +64,7 @@ export default function BookingsPage() {
   });
 
   return (
-    <Layout>
+    <DashboardLayout>
       <div className="container py-10">
         <div className="mb-8">
           <h1 className="text-3xl font-bold">Bookings</h1>
@@ -146,6 +146,6 @@ export default function BookingsPage() {
           ))}
         </div>
       </div>
-    </Layout>
+    </DashboardLayout>
   );
 }

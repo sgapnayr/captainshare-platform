@@ -4,10 +4,10 @@ import { useState } from "react";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { BoatCard } from "@/components/boat-card";
-import Layout from "@/components/layout";
 import Boat1 from "../../../assets/boat-1.jpg";
 import Boat2 from "../../../assets/boat-2.jpg";
 import Boat3 from "../../../assets/boat-3.jpg";
+import DashboardLayout from "@/components/dashboard-layout";
 
 // Sample data - in a real app, this would come from an API
 const boats = [
@@ -49,7 +49,7 @@ export default function BoatsPage() {
   );
 
   return (
-    <Layout>
+    <DashboardLayout>
       <div className="container py-10">
         <div className="mb-8 space-y-4">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">
@@ -71,6 +71,6 @@ export default function BoatsPage() {
           ))}
         </div>
       </div>
-    </Layout>
+    </DashboardLayout>
   );
 }

@@ -10,9 +10,9 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Layout from "@/components/layout";
 import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import DashboardLayout from "@/components/dashboard-layout";
 
 // Sample data - would come from API in real app
 const captainData = {
@@ -80,7 +80,7 @@ const captainData = {
 
 export default function CaptainDashboardPage() {
   return (
-    <Layout>
+    <DashboardLayout>
       <div className="container py-10">
         <div className="mb-8 flex items-center justify-between">
           <div>
@@ -291,6 +291,6 @@ export default function CaptainDashboardPage() {
           </div>
         </div>
       </div>
-    </Layout>
+    </DashboardLayout>
   );
 }

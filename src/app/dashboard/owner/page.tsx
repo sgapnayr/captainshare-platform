@@ -9,7 +9,7 @@ import {
   Settings,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Layout from "@/components/layout";
+import DashboardLayout from "@/components/dashboard-layout";
 
 // Sample data - would come from API in real app
 const ownerData = {
@@ -71,7 +71,7 @@ const ownerData = {
 
 export default function OwnerDashboardPage() {
   return (
-    <Layout>
+    <DashboardLayout>
       <div className="container py-10">
         <div className="mb-8 flex items-center justify-between">
           <div>
@@ -264,6 +264,6 @@ export default function OwnerDashboardPage() {
           </div>
         </div>
       </div>
-    </Layout>
+    </DashboardLayout>
   );
 }
