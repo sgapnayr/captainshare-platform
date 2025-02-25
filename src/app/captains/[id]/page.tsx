@@ -23,12 +23,13 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/layout";
+import Captain1 from "../../../../assets/captain-1.jpg";
 
 const captain = {
   id: "1",
   name: "Captain John Smith",
-  image: "/placeholder.svg?height=400&width=400",
-  coverImage: "/placeholder.svg?height=400&width=1200",
+  image: Captain1,
+  coverImage: Captain1,
   location: "Miami, FL",
   experience: 12,
   rating: 4.9,

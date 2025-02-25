@@ -5,6 +5,9 @@ import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { BoatCard } from "@/components/boat-card";
 import Layout from "@/components/layout";
+import Boat1 from "../../../assets/boat-1.jpg";
+import Boat2 from "../../../assets/boat-2.jpg";
+import Boat3 from "../../../assets/boat-3.jpg";
 
 // Sample data - in a real app, this would come from an API
 const boats = [
@@ -14,7 +17,7 @@ const boats = [
     type: "Yacht",
     location: "Miami, FL",
     rate: 299,
-    image: "/placeholder.svg?height=400&width=600",
+    image: Boat1,
   },
   {
     id: "2",
@@ -22,7 +25,7 @@ const boats = [
     type: "Sailboat",
     location: "San Diego, CA",
     rate: 199,
-    image: "/placeholder.svg?height=400&width=600",
+    image: Boat2,
   },
   {
     id: "3",
@@ -30,7 +33,7 @@ const boats = [
     type: "Catamaran",
     location: "Seattle, WA",
     rate: 249,
-    image: "/placeholder.svg?height=400&width=600",
+    image: Boat3,
   },
   // Add more boats...
 ];

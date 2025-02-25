@@ -2,6 +2,9 @@ import Image from "next/image";
 import { Calendar, MapPin, Anchor, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout";
+import Boat1 from "../../../../assets/boat-1.jpg";
+import Boat2 from "../../../../assets/boat-2.jpg";
+import Boat3 from "../../../../assets/boat-3.jpg";
 
 // Sample data - in a real app, this would come from an API based on the ID
 const boat = {
@@ -21,11 +24,7 @@ const boat = {
     "Bathroom",
     "Sun Deck",
   ],
-  images: [
-    "/placeholder.svg?height=600&width=800",
-    "/placeholder.svg?height=600&width=800",
-    "/placeholder.svg?height=600&width=800",
-  ],
+  images: [Boat1, Boat2, Boat3],
 };
 
 export default function BoatDetailsPage() {

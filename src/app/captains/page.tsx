@@ -7,13 +7,16 @@ import { Search, MapPin, Star, Clock, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Layout from "@/components/layout";
+import Captain1 from "../../../assets/captain-1.jpg";
+import Captain2 from "../../../assets/captain-2.jpg";
+import Captain3 from "../../../assets/captain-3.jpg";
 
 // Sample data - would come from API in real app
 const captains = [
   {
     id: "1",
     name: "Captain John Smith",
-    image: "/placeholder.svg?height=400&width=400",
+    image: Captain1,
     location: "Miami, FL",
     experience: 12,
     rating: 4.9,
@@ -26,7 +29,7 @@ const captains = [
   {
     id: "2",
     name: "Captain Sarah Johnson",
-    image: "/placeholder.svg?height=400&width=400",
+    image: Captain2,
     location: "San Diego, CA",
     experience: 8,
     rating: 4.8,
@@ -39,7 +42,7 @@ const captains = [
   {
     id: "3",
     name: "Captain Mike Davis",
-    image: "/placeholder.svg?height=400&width=400",
+    image: Captain3,
     location: "Seattle, WA",
     experience: 15,
     rating: 4.7,
