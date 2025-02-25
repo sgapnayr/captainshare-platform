@@ -10,21 +10,21 @@ import {
   ChevronDown,
   Calendar,
 } from "lucide-react";
-import { Button } from "../../../components/ui/button";
+import { Button } from "../../components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../../../components/ui/card";
+} from "../../components/ui/card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../../components/ui/select";
+} from "../../components/ui/select";
 import {
   Table,
   TableBody,
@@ -32,19 +32,15 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../../../components/ui/table";
-import {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-} from "../../../components/ui/alert";
+} from "../../components/ui/table";
+import { Alert, AlertDescription, AlertTitle } from "../../components/ui/alert";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../../../components/ui/dropdown-menu";
-import DashboardLayout from "@/components/dashboard-layout";
+} from "../../components/ui/dropdown-menu";
+import DashboardLayout from "../../components/dashboard-layout";
 
 // Sample data - would come from API
 const payoutHistory = [

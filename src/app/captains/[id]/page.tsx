@@ -23,7 +23,7 @@ import {
 } from "../../../components/ui/card";
 import { Badge } from "../../../components/ui/badge";
 import Captain1 from "../../../../assets/captain-1.jpg";
-import DashboardLayout from "@/components/dashboard-layout";
+import DashboardLayout from "../../../components/dashboard-layout";
 
 const captain = {
   id: "1",

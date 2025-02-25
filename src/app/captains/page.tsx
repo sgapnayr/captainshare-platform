@@ -4,12 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Search, MapPin, Star, Clock, Shield } from "lucide-react";
-import { Button } from "../../../components/ui/button";
-import { Input } from "../../../components/ui/input";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 import Captain1 from "../../../assets/captain-1.jpg";
 import Captain2 from "../../../assets/captain-2.jpg";
 import Captain3 from "../../../assets/captain-3.jpg";
-import DashboardLayout from "@/components/dashboard-layout";
+import DashboardLayout from "../../components/dashboard-layout";
 
 // Sample data - would come from API in real app
 const captains = [

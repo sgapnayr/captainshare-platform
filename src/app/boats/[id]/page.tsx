@@ -4,7 +4,7 @@ import { Button } from "../../../components/ui/button";
 import Boat1 from "../../../../assets/boat-1.jpg";
 import Boat2 from "../../../../assets/boat-2.jpg";
 import Boat3 from "../../../../assets/boat-3.jpg";
-import DashboardLayout from "@/components/dashboard-layout";
+import DashboardLayout from "../../../components/dashboard-layout";
 // Sample data - in a real app, this would come from an API based on the ID
 const boat = {
   id: "1",

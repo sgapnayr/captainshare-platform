@@ -2,16 +2,16 @@
 
 import { useState } from "react";
 import { Calendar, Clock, Ship, MapPin, Search } from "lucide-react";
-import { Button } from "../../../components/ui/button";
-import { Input } from "../../../components/ui/input";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../../components/ui/select";
-import DashboardLayout from "@/components/dashboard-layout";
+} from "../../components/ui/select";
+import DashboardLayout from "../../components/dashboard-layout";
 
 // Sample data - would come from API
 const bookings = [

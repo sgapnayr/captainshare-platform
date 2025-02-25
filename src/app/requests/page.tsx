@@ -12,15 +12,15 @@ import {
   Shield,
   MessageSquare,
 } from "lucide-react";
-import { Button } from "../../../components/ui/button";
-import { Input } from "../../../components/ui/input";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../../components/ui/select";
+} from "../../components/ui/select";
 import {
   Dialog,
   DialogContent,
@@ -29,16 +29,16 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogFooter,
-} from "../../../components/ui/dialog";
-import { Badge } from "../../../components/ui/badge";
-import { Textarea } from "../../../components/ui/textarea";
+} from "../../components/ui/dialog";
+import { Badge } from "../../components/ui/badge";
+import { Textarea } from "../../components/ui/textarea";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "../../../components/ui/avatar";
-import { Label } from "../../../components/ui/label";
-import DashboardLayout from "@/components/dashboard-layout";
+} from "../../components/ui/avatar";
+import { Label } from "../../components/ui/label";
+import DashboardLayout from "../../components/dashboard-layout";
 
 // Sample data - would come from API
 const requestsData = {

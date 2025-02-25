@@ -17,7 +17,7 @@ import {
   CardTitle,
   CardContent,
 } from "../../../components/ui/card";
-import DashboardLayout from "@/components/dashboard-layout";
+import DashboardLayout from "../../../components/dashboard-layout";
 
 // Sample data - would come from API in real app
 const captainData = {

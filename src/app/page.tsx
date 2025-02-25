@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Anchor, Ship, Clock } from "lucide-react";
-import { Button } from "../../../components/ui/button";
-import Layout from "@/components/layout";
+import { Button } from "../components/ui/button";
+import Layout from "../components/layout";
 
 export default function HomePage() {
   return (

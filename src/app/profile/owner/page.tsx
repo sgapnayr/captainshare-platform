@@ -23,7 +23,7 @@ import {
 } from "../../../components/ui/card";
 import { Badge } from "../../../components/ui/badge";
 import { Progress } from "../../../components/ui/progress";
-import DashboardLayout from "@/components/dashboard-layout";
+import DashboardLayout from "../../../components/dashboard-layout";
 import Captain1 from "../../../../assets/captain-1.jpg";
 
 // Sample owner profile data

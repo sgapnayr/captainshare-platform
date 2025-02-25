@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { Search } from "lucide-react";
-import { Input } from "../../../components/ui/input";
-import { BoatCard } from "@/components/boat-card";
+import { Input } from "../../components/ui/input";
+import { BoatCard } from "../../components/boat-card";
 import Boat1 from "../../../assets/boat-1.jpg";
 import Boat2 from "../../../assets/boat-2.jpg";
 import Boat3 from "../../../assets/boat-3.jpg";
-import DashboardLayout from "@/components/dashboard-layout";
+import DashboardLayout from "../../components/dashboard-layout";
 
 // Sample data - in a real app, this would come from an API
 const boats = [

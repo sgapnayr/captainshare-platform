@@ -21,24 +21,24 @@ import {
   DollarSign,
   Settings,
 } from "lucide-react";
-import { Button } from "../../../components/ui/button";
-import { Sheet, SheetContent } from "../../../components/ui/sheet";
-import { Switch } from "../../../components/ui/switch";
-import { Label } from "../../../components/ui/label";
-import { cn } from "@/lib/utils";
+import { Button } from "../components/ui/button";
+import { Sheet, SheetContent } from "../components/ui/sheet";
+import { Switch } from "../components/ui/switch";
+import { Label } from "../components/ui/label";
+import { cn } from "../lib/utils";
 
 import {
   TripRequestModal,
   PendingRequestAlert,
   FloatingNotification,
   type TripRequest,
-} from "@/components/trip-request-modal";
+} from "../components/trip-request-modal";
 import {
   CaptainRequestModal,
   PendingCaptainRequestAlert,
   FloatingCaptainNotification,
   type CaptainRequest,
-} from "@/components/captain-request-modal";
+} from "../components/captain-request-modal";
 
 // Helper function to determine if user has specific role
 const hasRole = (role: string) => {

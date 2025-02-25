@@ -9,7 +9,7 @@ import {
   Settings,
 } from "lucide-react";
 import { Button } from "../../../components/ui/button";
-import DashboardLayout from "@/components/dashboard-layout";
+import DashboardLayout from "../../../components/dashboard-layout";
 import Boat1 from "../../../../assets/boat-1.jpg";
 import Boat2 from "../../../../assets/boat-2.jpg";
 

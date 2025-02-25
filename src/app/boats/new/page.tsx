@@ -14,7 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../../components/ui/select";
-import DashboardLayout from "@/components/dashboard-layout";
+import DashboardLayout from "../../../components/dashboard-layout";
 
 export default function AddBoatPage() {
   const router = useRouter();
