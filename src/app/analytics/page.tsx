@@ -15,14 +15,14 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "../../components/ui/card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../../components/ui/select";
 import {
   Bar,
   BarChart,
@@ -39,8 +39,8 @@ import {
   ChartLegend,
   ChartLegendContent,
   type ChartConfig,
-} from "@/components/ui/chart";
-import DashboardLayout from "@/components/dashboard-layout";
+} from "../../components/ui/chart";
+import DashboardLayout from "../../components/dashboard-layout";
 
 // Sample data - would come from API
 const analyticsData = {
