@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import {
   Ship,
   Calendar,
-  Settings,
   LogOut,
   Menu,
   User,
@@ -16,7 +15,6 @@ import {
   Bell,
   Users,
   FileText,
-  Shield,
   DollarSign,
   ArrowUpRight,
 } from "lucide-react";
