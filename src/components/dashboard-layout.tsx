@@ -30,8 +30,13 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
   const navigation = [
     {
-      name: "Overview",
-      href: "/dashboard",
+      name: "Overview (Owner)",
+      href: "/dashboard/owner",
+      icon: Home,
+    },
+    {
+      name: "Overview (Captain)",
+      href: "/dashboard/captain",
       icon: Home,
     },
     {
@@ -50,7 +55,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       icon: Calendar,
     },
     {
-      name: "Analytics",
+      name: "Analytics (Admin)",
       href: "/analytics",
       icon: BarChart,
     },
@@ -58,11 +63,6 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       name: "Messages",
       href: "/messages",
       icon: MessageSquare,
-    },
-    {
-      name: "Settings",
-      href: "/settings",
-      icon: Settings,
     },
   ];
 
