@@ -289,7 +289,6 @@ export default function MyBoatsPage() {
                                     )}
                                   </p>
                                 </div>
-                                {/* Add more maintenance details as needed */}
                               </div>
                             </DialogContent>
                           </Dialog>
