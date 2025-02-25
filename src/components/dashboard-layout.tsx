@@ -285,8 +285,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const [pendingTripRequests, setPendingTripRequests] = useState<TripRequest[]>(
     [sampleTripRequest]
   );
-  const [currentTripRequest, setCurrentTripRequest] =
-    useState<TripRequest | null>(sampleTripRequest);
+  const [currentTripRequest] = useState<TripRequest | null>(sampleTripRequest);
 
   // Captain request state (for boat owners)
   const [showCaptainModal, setShowCaptainModal] = useState(false);
@@ -294,8 +293,9 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const [pendingCaptainRequests, setPendingCaptainRequests] = useState<
     CaptainRequest[]
   >([sampleCaptainRequest]);
-  const [currentCaptainRequest, setCurrentCaptainRequest] =
-    useState<CaptainRequest | null>(sampleCaptainRequest);
+  const [currentCaptainRequest] = useState<CaptainRequest | null>(
+    sampleCaptainRequest
+  );
 
   // Trip request handlers
   const handleTripModalOpenChange = (open: boolean) => {

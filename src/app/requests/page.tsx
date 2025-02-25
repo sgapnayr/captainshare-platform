@@ -27,7 +27,6 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
   DialogFooter,
 } from "../../components/ui/dialog";
 import { Badge } from "../../components/ui/badge";
@@ -132,7 +131,7 @@ const requestsData = {
 };
 
 export default function RequestsPage() {
-  const [userRole, setUserRole] = useState<"captain" | "owner">(() => {
+  const [userRole] = useState<"captain" | "owner">(() => {
     if (typeof window !== "undefined") {
       return (
         (localStorage.getItem("userRole") as "captain" | "owner") || "captain"
