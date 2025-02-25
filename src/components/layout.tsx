@@ -36,19 +36,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               href="/captains"
               className="text-sm font-medium hover:text-primary"
             >
-              Captains
+              Find Captains
             </Link>
             <Link
               href="/dashboard/owner"
               className="text-sm font-medium hover:text-primary"
             >
-              Owner Dashboard
+              I am a Owner
             </Link>
             <Link
               href="/dashboard/captain"
               className="text-sm font-medium hover:text-primary"
             >
-              Captain Dashboard
+              I am a Captain
             </Link>
             <Button
               variant="ghost"
@@ -100,21 +100,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 className="text-sm font-medium hover:text-primary"
                 onClick={() => setIsOpen(false)}
               >
-                Captains
+                Find Captains
               </Link>
               <Link
                 href="/dashboard/owner"
                 className="text-sm font-medium hover:text-primary"
                 onClick={() => setIsOpen(false)}
               >
-                Owner Dashboard
+                I am a Owner
               </Link>
               <Link
                 href="/dashboard/captain"
                 className="text-sm font-medium hover:text-primary"
                 onClick={() => setIsOpen(false)}
               >
-                Captain Dashboard
+                I am a Captain
               </Link>
               <div className="flex items-center gap-4">
                 <Button
