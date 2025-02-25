@@ -23,7 +23,7 @@ import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 // Helper function to determine if user has specific role
-const hasRole = (role: string) => {
+const hasRole = () => {
   // This would actually check the user's role from auth context
   return true;
 };
