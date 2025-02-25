@@ -29,13 +29,13 @@ export default function HomePage() {
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Button size="lg" asChild>
-                <Link href="/signup">
+                <Link href="/sign-up">
                   Sign Up as Captain
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link href="/boats/new">List Your Boat</Link>
+                <Link href="/sign-up">List Your Boat</Link>
               </Button>
             </div>
           </div>
@@ -86,9 +86,11 @@ export default function HomePage() {
             <p className="mt-4 text-lg text-muted-foreground">
               Join thousands of boat owners and captains on CaptainShare.
             </p>
-            <Button size="lg" className="mt-8">
-              Get Started
-            </Button>
+            <Link href="/sign-up">
+              <Button size="lg" className="mt-8">
+                Get Started
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

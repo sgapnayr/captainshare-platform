@@ -63,7 +63,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               )}
             </Button>
             <Button variant="default" asChild>
-              <Link href="/login">Sign In</Link>
+              <Link href="/sign-in">Sign In</Link>
             </Button>
           </nav>
 
@@ -130,7 +130,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   )}
                 </Button>
                 <Button variant="default" asChild className="w-full">
-                  <Link href="/login">Sign In</Link>
+                  <Link href="/sign-in">Sign In</Link>
                 </Button>
               </div>
             </nav>
