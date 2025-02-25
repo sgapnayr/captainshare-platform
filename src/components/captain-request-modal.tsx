@@ -12,7 +12,7 @@ import {
 import { Button } from "../components/ui/button";
 import { Alert, AlertDescription } from "../components/ui/alert";
 import { Badge } from "../components/ui/badge";
-import { cn } from "@/lib/utils";
+import { cn } from "../lib/utils";
 
 export interface CaptainRequest {
   id: string;

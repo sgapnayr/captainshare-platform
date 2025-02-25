@@ -11,7 +11,7 @@ import {
 } from "../components/ui/dialog";
 import { Button } from "../components/ui/button";
 import { Alert, AlertDescription } from "../components/ui/alert";
-import { cn } from "@/lib/utils";
+import { cn } from "../lib/utils";
 
 export interface TripRequest {
   id: string;
