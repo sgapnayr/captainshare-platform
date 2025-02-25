@@ -43,12 +43,12 @@ const navigation = [
   },
   {
     name: "Boats",
-    href: "/boats",
+    href: "/my-boats",
     icon: Ship,
   },
   {
     name: "Captains",
-    href: "/captains",
+    href: "/my-captains",
     icon: Users,
   },
   {
