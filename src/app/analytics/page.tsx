@@ -5,12 +5,10 @@ import {
   Users,
   Ship,
   DollarSign,
-  TrendingUp,
   Calendar,
   ArrowUpRight,
   ArrowDownRight,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
