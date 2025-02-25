@@ -18,6 +18,7 @@ import {
   FileText,
   Shield,
   DollarSign,
+  ArrowUpRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
@@ -79,9 +80,15 @@ const adminNavigation = [
   },
   {
     name: "Payouts",
-    href: "/admin/payouts",
+    href: "/payouts",
     icon: DollarSign,
     description: "Payment processing and history",
+  },
+  {
+    name: "Migrations",
+    href: "/migrations",
+    icon: ArrowUpRight,
+    description: "Migrations from Fareharbor or other platforms",
   },
 ];
 
@@ -211,7 +218,9 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
             </Button>
           </div>
         </header>
-        <main className="flex-1 overflow-y-auto bg-muted/10">{children}</main>
+        <main className="flex-1 overflow-y-auto bg-muted/10 px-4">
+          {children}
+        </main>
       </div>
     </div>
   );
