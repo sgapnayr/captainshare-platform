@@ -118,6 +118,13 @@ const adminNavigation = [
         : "Manage captain payments",
     role: "all",
   },
+  {
+    name: "Analytics",
+    href: "/analytics",
+    icon: BarChart,
+    description: "View your analytics",
+    role: "all",
+  },
 ];
 
 // Sample request data - would come from API
