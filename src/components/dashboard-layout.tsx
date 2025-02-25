@@ -15,10 +15,75 @@ import {
   MessageSquare,
   Bell,
   Users,
+  FileText,
+  Shield,
+  DollarSign,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+
+// Helper function to determine if user has specific role
+const hasRole = (role: string) => {
+  // This would actually check the user's role from auth context
+  return true;
+};
+
+const navigation = [
+  {
+    name: "Overview (Owner)",
+    href: "/dashboard/owner",
+    icon: Home,
+    role: "owner",
+  },
+  {
+    name: "Overview (Captain)",
+    href: "/dashboard/captain",
+    icon: Home,
+    role: "captain",
+  },
+  {
+    name: "Boats",
+    href: "/boats",
+    icon: Ship,
+  },
+  {
+    name: "Captains",
+    href: "/captains",
+    icon: Users,
+  },
+  {
+    name: "Bookings",
+    href: "/bookings",
+    icon: Calendar,
+  },
+  {
+    name: "Analytics",
+    href: "/analytics",
+    icon: BarChart,
+    role: "admin",
+  },
+  {
+    name: "Messages",
+    href: "/messages",
+    icon: MessageSquare,
+  },
+];
+
+const adminNavigation = [
+  {
+    name: "Tax Forms",
+    href: "/admin",
+    icon: FileText,
+    description: "W-9 and tax document management",
+  },
+  {
+    name: "Payouts",
+    href: "/admin/payouts",
+    icon: DollarSign,
+    description: "Payment processing and history",
+  },
+];
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -28,43 +93,9 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const pathname = usePathname();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
-  const navigation = [
-    {
-      name: "Overview (Owner)",
-      href: "/dashboard/owner",
-      icon: Home,
-    },
-    {
-      name: "Overview (Captain)",
-      href: "/dashboard/captain",
-      icon: Home,
-    },
-    {
-      name: "Boats",
-      href: "/boats",
-      icon: Ship,
-    },
-    {
-      name: "Captains",
-      href: "/captains",
-      icon: Users,
-    },
-    {
-      name: "Bookings",
-      href: "/bookings",
-      icon: Calendar,
-    },
-    {
-      name: "Analytics (Admin)",
-      href: "/analytics",
-      icon: BarChart,
-    },
-    {
-      name: "Messages",
-      href: "/messages",
-      icon: MessageSquare,
-    },
-  ];
+  const filteredNavigation = navigation.filter(
+    (item) => !item.role || hasRole(item.role)
+  );
 
   const NavContent = () => (
     <>
@@ -76,7 +107,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
           </Link>
         </div>
         <nav className="grid gap-1 px-2">
-          {navigation.map((item) => {
+          {filteredNavigation.map((item) => {
             const isActive = pathname === item.href;
             return (
               <Link
@@ -93,6 +124,37 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
               </Link>
             );
           })}
+
+          {/* Administrative Section */}
+          {(hasRole("admin") || hasRole("captain")) && (
+            <>
+              <div className="mx-3 my-2 text-xs font-semibold text-muted-foreground">
+                Administrative
+              </div>
+              {adminNavigation.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={cn(
+                      "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent",
+                      isActive ? "bg-accent" : "transparent"
+                    )}
+                    onClick={() => setIsMobileOpen(false)}
+                  >
+                    <item.icon className="h-4 w-4" />
+                    <div className="flex flex-col">
+                      <span>{item.name}</span>
+                      <span className="text-xs text-muted-foreground">
+                        {item.description}
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </>
+          )}
         </nav>
       </div>
       <div className="border-t p-4">
@@ -116,19 +178,16 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
   return (
     <div className="flex min-h-screen">
-      {/* Desktop Sidebar */}
       <aside className="hidden w-64 flex-col border-r lg:flex">
         <NavContent />
       </aside>
 
-      {/* Mobile Sidebar */}
       <Sheet open={isMobileOpen} onOpenChange={setIsMobileOpen}>
         <SheetContent side="left" className="w-64 p-0">
           <NavContent />
         </SheetContent>
       </Sheet>
 
-      {/* Main Content */}
       <div className="flex flex-1 flex-col">
         <header className="flex h-14 items-center gap-4 border-b px-4 lg:h-[60px]">
           <Button
@@ -152,9 +211,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
             </Button>
           </div>
         </header>
-        <main className="flex-1 overflow-y-auto bg-muted/10 px-4">
-          {children}
-        </main>
+        <main className="flex-1 overflow-y-auto bg-muted/10">{children}</main>
       </div>
     </div>
   );
