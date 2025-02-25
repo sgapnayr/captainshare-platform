@@ -5,17 +5,21 @@ import type React from "react";
 import { useState } from "react";
 import { format } from "date-fns";
 import { Search, Send, MoreVertical } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+import { ScrollArea } from "../../components/ui/scroll-area";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "../../components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import DashboardLayout from "@/components/dashboard-layout";
+} from "../../components/ui/dropdown-menu";
+import DashboardLayout from "../../components/dashboard-layout";
 
 // Sample data - would come from API
 const conversations = [
