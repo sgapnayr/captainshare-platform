@@ -119,8 +119,6 @@ const captain = {
 };
 
 export default function CaptainProfilePage() {
-  const [selectedDate, setSelectedDate] = useState<Date>();
-
   return (
     <Layout>
       <div className="relative">
