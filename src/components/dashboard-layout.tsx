@@ -61,12 +61,12 @@ const navigation = [
   },
   {
     name: "Boats",
-    href: "/boats",
+    href: "/my-boats",
     icon: Ship,
   },
   {
     name: "Captains",
-    href: "/captains",
+    href: "/my-captains",
     icon: Users,
   },
   {
@@ -90,19 +90,19 @@ const navigation = [
 const adminNavigation = [
   {
     name: "Tax Forms",
-    href: "/admin/tax-forms",
+    href: "/admin",
     icon: FileText,
     description: "W-9 and tax document management",
   },
   {
-    name: "Insurance",
-    href: "/admin/insurance",
+    name: "Migrations",
+    href: "/migrations",
     icon: Shield,
-    description: "Insurance verification and tracking",
+    description: "For migrating data from FareHarbor",
   },
   {
     name: "Payouts",
-    href: "/admin/payouts",
+    href: "/payouts",
     icon: DollarSign,
     description: "Payment processing and history",
   },

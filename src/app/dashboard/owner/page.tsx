@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DashboardLayout from "@/components/dashboard-layout";
+import Boat1 from "../../../../assets/boat-1.jpg";
+import Boat2 from "../../../../assets/boat-2.jpg";
 
 // Sample data - would come from API in real app
 const ownerData = {
@@ -25,7 +27,7 @@ const ownerData = {
       name: "Sea Spirit",
       type: "Yacht",
       status: "Available",
-      image: "/placeholder.svg?height=100&width=150",
+      image: Boat1,
       metrics: {
         bookings: 12,
         earnings: 3600,
@@ -38,7 +40,7 @@ const ownerData = {
       name: "Ocean Explorer",
       type: "Sailboat",
       status: "Booked",
-      image: "/placeholder.svg?height=100&width=150",
+      image: Boat2,
       metrics: {
         bookings: 8,
         earnings: 2400,
