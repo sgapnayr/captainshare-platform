@@ -7,9 +7,12 @@ import {
   MapPin,
   Settings,
   AlertCircle,
+  ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout";
+import Link from "next/link";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 // Sample data - would come from API in real app
 const captainData = {
@@ -55,6 +58,7 @@ const captainData = {
       date: "2024-02-25",
     },
   ],
+
   certifications: [
     {
       name: "USCG Master Captain License",
@@ -217,6 +221,42 @@ export default function CaptainDashboardPage() {
                 </div>
               </div>
             </div>
+
+            {/* Quick Actions */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Quick Actions</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  <Button
+                    variant="outline"
+                    className="w-full justify-between"
+                    asChild
+                  >
+                    <Link href="/bookings">
+                      View All Bookings
+                      <ChevronRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button variant="outline" className="w-full justify-between">
+                    Update Availability
+                    <ChevronRight className="h-4 w-4" />
+                  </Button>
+                  <Button variant="outline" className="w-full justify-between">
+                    Message Clients
+                    <ChevronRight className="h-4 w-4" />
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="w-full justify-between text-destructive"
+                  >
+                    Cancel/Reschedule Trip
+                    <ChevronRight className="h-4 w-4" />
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
 
             {/* Certifications */}
             <div className="rounded-lg border">

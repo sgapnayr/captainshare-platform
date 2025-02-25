@@ -241,10 +241,12 @@ export default function OwnerDashboardPage() {
             <div className="rounded-lg border p-6">
               <h2 className="font-semibold">Quick Actions</h2>
               <div className="mt-4 space-y-2">
-                <Button variant="outline" className="w-full justify-between">
-                  View All Bookings
-                  <ChevronRight className="h-4 w-4" />
-                </Button>
+                <Link href="/bookings">
+                  <Button variant="outline" className="w-full justify-between">
+                    View All Bookings
+                    <ChevronRight className="h-4 w-4" />
+                  </Button>
+                </Link>
                 <Button variant="outline" className="w-full justify-between">
                   Manage Fleet
                   <ChevronRight className="h-4 w-4" />
