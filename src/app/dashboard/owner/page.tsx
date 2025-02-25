@@ -5,9 +5,6 @@ import {
   DollarSign,
   Calendar,
   TrendingUp,
-  Users,
-  Clock,
-  AlertCircle,
   ChevronRight,
   Settings,
 } from "lucide-react";
