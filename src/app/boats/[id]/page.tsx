@@ -95,7 +95,7 @@ export default function BoatDetailsPage() {
                 </div>
                 <Button size="lg">
                   <Calendar className="mr-2 h-4 w-4" />
-                  Book Now
+                  Apply to Captain
                 </Button>
               </div>
             </div>
