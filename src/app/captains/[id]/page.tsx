@@ -1,6 +1,7 @@
+"use client";
+
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import {
   Star,
   MapPin,
@@ -10,11 +11,9 @@ import {
   Anchor,
   Award,
   MessageCircle,
-  ChevronLeft,
-  ChevronRight,
   ThumbsUp,
   Ship,
-} from "lucide-react"; // Added Ship import
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -26,7 +25,6 @@ import {
 import { Badge } from "@/components/ui/badge";
 import Layout from "@/components/layout";
 
-// Sample data - would come from API based on the captain ID
 const captain = {
   id: "1",
   name: "Captain John Smith",
