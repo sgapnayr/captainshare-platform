@@ -129,7 +129,7 @@ export default function MigrationsPage() {
                     <Database className="h-4 w-4" />
                     <AlertTitle>FareHarbor API Connection</AlertTitle>
                     <AlertDescription>
-                      You'll need your FareHarbor API credentials to proceed
+                      You will need your FareHarbor API credentials to proceed
                       with the migration.
                     </AlertDescription>
                   </Alert>
@@ -141,7 +141,7 @@ export default function MigrationsPage() {
                       <h3 className="font-medium">Migration Progress</h3>
                       {isMigrating && (
                         <p className="text-sm text-muted-foreground">
-                          Importing data... Please don't close this page.
+                          Importing data... Please do not close this page.
                         </p>
                       )}
                     </div>
