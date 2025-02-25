@@ -67,11 +67,6 @@ const ownerData = {
       status: "Pending",
     },
   ],
-  popularTimeSlots: [
-    { day: "Saturday", time: "10:00 AM - 2:00 PM", bookingRate: "85%" },
-    { day: "Sunday", time: "11:00 AM - 3:00 PM", bookingRate: "78%" },
-    { day: "Friday", time: "2:00 PM - 6:00 PM", bookingRate: "72%" },
-  ],
 };
 
 export default function OwnerDashboardPage() {
@@ -200,36 +195,6 @@ export default function OwnerDashboardPage() {
                 <Button variant="outline" className="mt-4 w-full" asChild>
                   <Link href="/boats/new">Add New Boat</Link>
                 </Button>
-              </div>
-            </div>
-
-            {/* Popular Time Slots */}
-            <div className="rounded-lg border">
-              <div className="p-6">
-                <h2 className="font-semibold">Popular Time Slots</h2>
-                <div className="mt-4 space-y-4">
-                  {ownerData.popularTimeSlots.map((slot, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center justify-between rounded-lg border p-4"
-                    >
-                      <div>
-                        <h3 className="font-medium">{slot.day}</h3>
-                        <p className="text-sm text-muted-foreground">
-                          {slot.time}
-                        </p>
-                      </div>
-                      <div className="text-right">
-                        <span className="text-sm font-medium text-primary">
-                          {slot.bookingRate}
-                        </span>
-                        <p className="text-xs text-muted-foreground">
-                          Booking Rate
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
           </div>

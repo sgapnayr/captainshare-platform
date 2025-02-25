@@ -55,20 +55,6 @@ const captainData = {
       date: "2024-02-25",
     },
   ],
-  popularRoutes: [
-    {
-      route: "Miami Beach Circuit",
-      trips: 45,
-      rating: 4.9,
-      earnings: 6750,
-    },
-    {
-      route: "Biscayne Bay Tour",
-      trips: 38,
-      rating: 4.8,
-      earnings: 5700,
-    },
-  ],
   certifications: [
     {
       name: "USCG Master Captain License",
@@ -183,51 +169,6 @@ export default function CaptainDashboardPage() {
               </div>
             </div>
 
-            {/* Popular Routes */}
-            <div className="rounded-lg border">
-              <div className="p-6">
-                <h2 className="font-semibold">Popular Routes</h2>
-                <div className="mt-4 space-y-4">
-                  {captainData.popularRoutes.map((route, index) => (
-                    <div key={index} className="rounded-lg border p-4">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-medium">{route.route}</h3>
-                        <div className="flex items-center gap-1">
-                          <Star className="h-4 w-4 fill-primary text-primary" />
-                          <span>{route.rating}</span>
-                        </div>
-                      </div>
-                      <div className="mt-2 flex items-center justify-between text-sm text-muted-foreground">
-                        <span>{route.trips} trips completed</span>
-                        <span>${route.earnings} earned</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column */}
-          <div className="space-y-6">
-            {/* Monthly Earnings */}
-            <div className="rounded-lg border">
-              <div className="p-6">
-                <h2 className="font-semibold">Monthly Earnings</h2>
-                <div className="mt-4 space-y-4">
-                  {captainData.monthlyEarnings.map((month, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center justify-between rounded-lg border p-4"
-                    >
-                      <span className="font-medium">{month.month}</span>
-                      <span className="font-medium">${month.amount}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
             {/* Recent Reviews */}
             <div className="rounded-lg border">
               <div className="p-6">
@@ -250,6 +191,27 @@ export default function CaptainDashboardPage() {
                       <p className="mt-2 text-xs text-muted-foreground">
                         {review.date}
                       </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="space-y-6">
+            {/* Monthly Earnings */}
+            <div className="rounded-lg border">
+              <div className="p-6">
+                <h2 className="font-semibold">Monthly Earnings</h2>
+                <div className="mt-4 space-y-4">
+                  {captainData.monthlyEarnings.map((month, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center justify-between rounded-lg border p-4"
+                    >
+                      <span className="font-medium">{month.month}</span>
+                      <span className="font-medium">${month.amount}</span>
                     </div>
                   ))}
                 </div>
