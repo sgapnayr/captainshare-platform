@@ -9,10 +9,10 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Badge } from "@/components/ui/badge";
+} from "../../../components/ui/dialog";
+import { Button } from "../../../components/ui/button";
+import { Alert, AlertDescription } from "../../../components/ui/alert";
+import { Badge } from "../../../components/ui/badge";
 import { cn } from "@/lib/utils";
 
 export interface CaptainRequest {

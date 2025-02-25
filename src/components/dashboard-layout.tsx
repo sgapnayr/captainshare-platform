@@ -21,10 +21,10 @@ import {
   DollarSign,
   Settings,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent } from "@/components/ui/sheet";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
+import { Button } from "../../../components/ui/button";
+import { Sheet, SheetContent } from "../../../components/ui/sheet";
+import { Switch } from "../../../components/ui/switch";
+import { Label } from "../../../components/ui/label";
 import { cn } from "@/lib/utils";
 
 import {

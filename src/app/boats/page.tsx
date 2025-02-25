@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Search } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { Input } from "../../../components/ui/input";
 import { BoatCard } from "@/components/boat-card";
 import Boat1 from "../../../assets/boat-1.jpg";
 import Boat2 from "../../../assets/boat-2.jpg";

@@ -16,16 +16,16 @@ import {
   XCircle,
   Search,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "../../../components/ui/button";
+import { Input } from "../../../components/ui/input";
+import { Card, CardContent } from "../../../components/ui/card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../../../components/ui/select";
 import {
   Dialog,
   DialogContent,
@@ -33,8 +33,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Badge } from "@/components/ui/badge";
+} from "../../../components/ui/dialog";
+import { Badge } from "../../../components/ui/badge";
 import DashboardLayout from "@/components/dashboard-layout";
 import Link from "next/link";
 import Boat1 from "../../../assets/boat-1.jpg";

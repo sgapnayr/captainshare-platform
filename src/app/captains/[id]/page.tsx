@@ -13,15 +13,15 @@ import {
   ThumbsUp,
   Ship,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../../components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+} from "../../../components/ui/card";
+import { Badge } from "../../../components/ui/badge";
 import Captain1 from "../../../../assets/captain-1.jpg";
 import DashboardLayout from "@/components/dashboard-layout";
 

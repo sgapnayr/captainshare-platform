@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Calendar, MapPin, Anchor, Users } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../../components/ui/button";
 import Boat1 from "../../../../assets/boat-1.jpg";
 import Boat2 from "../../../../assets/boat-2.jpg";
 import Boat3 from "../../../../assets/boat-3.jpg";
