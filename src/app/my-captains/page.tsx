@@ -147,11 +147,19 @@ export default function MyCaptainsPage() {
   return (
     <DashboardLayout>
       <div className="container py-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold">My Captains</h1>
-          <p className="mt-2 text-muted-foreground">
-            Manage your fleet captains
-          </p>
+        <div className="mb-8 flex flex-row items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold">My Captains</h1>
+            <p className="mt-2 text-muted-foreground">
+              Manage your fleet captains
+            </p>
+          </div>
+
+          <div className="rounded-lg border bg-muted/50 p-4 text-center">
+            <Button size="lg" className="" asChild>
+              <Link href="/captains">Find More Captains</Link>
+            </Button>
+          </div>
         </div>
 
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -176,16 +184,6 @@ export default function MyCaptainsPage() {
               <SelectItem value="unavailable">Unavailable</SelectItem>
             </SelectContent>
           </Select>
-        </div>
-
-        <div className="mb-12 mt-12 rounded-lg border bg-muted/50 p-8 text-center">
-          <h2 className="text-2xl font-bold">Need More Captains?</h2>
-          <p className="mt-2 text-muted-foreground">
-            Find experienced and certified captains to join your fleet.
-          </p>
-          <Button size="lg" className="mt-6" asChild>
-            <Link href="/captains">Find More Captains</Link>
-          </Button>
         </div>
 
         <div className="grid gap-6">

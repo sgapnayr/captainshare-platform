@@ -19,9 +19,12 @@ import {
   FileText,
   Shield,
   DollarSign,
+  Settings,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 
 import {
@@ -46,15 +49,19 @@ const hasRole = (role: string) => {
   return true;
 };
 
+// Define userRole here, before it's used
+const userRole: "captain" | "owner" = "captain";
+
+// Update the navigation array to include the new Requests section and role-specific admin items
 const navigation = [
   {
-    name: "Overview (Owner)",
+    name: "Overview",
     href: "/dashboard/owner",
     icon: Home,
     role: "owner",
   },
   {
-    name: "Overview (Captain)",
+    name: "Overview",
     href: "/dashboard/captain",
     icon: Home,
     role: "captain",
@@ -63,11 +70,13 @@ const navigation = [
     name: "Boats",
     href: "/my-boats",
     icon: Ship,
+    role: "captain",
   },
   {
     name: "Captains",
     href: "/my-captains",
     icon: Users,
+    role: "owner",
   },
   {
     name: "Bookings",
@@ -75,14 +84,8 @@ const navigation = [
     icon: Calendar,
   },
   {
-    name: "Analytics",
-    href: "/analytics",
-    icon: BarChart,
-    role: "admin",
-  },
-  {
-    name: "Messages",
-    href: "/messages",
+    name: "Requests",
+    href: "/requests",
     icon: MessageSquare,
   },
 ];
@@ -90,21 +93,30 @@ const navigation = [
 const adminNavigation = [
   {
     name: "Tax Forms",
-    href: "/admin",
+    href: "/tax-forms",
     icon: FileText,
-    description: "W-9 and tax document management",
+    description:
+      userRole === "captain"
+        ? "Your tax documents and forms"
+        : "Captain tax document management",
+    role: "all",
   },
   {
     name: "Migrations",
     href: "/migrations",
     icon: Shield,
     description: "For migrating data from FareHarbor",
+    role: "owner",
   },
   {
     name: "Payouts",
     href: "/payouts",
     icon: DollarSign,
-    description: "Payment processing and history",
+    description:
+      userRole === "captain"
+        ? "View your earnings and payment history"
+        : "Manage captain payments",
+    role: "all",
   },
 ];
 
@@ -143,10 +155,6 @@ const sampleCaptainRequest: CaptainRequest = {
   onTimeRate: 0.98,
 };
 
-// Add state for modals
-// const [showTripModal, setShowTripModal] = useState(false)
-// const [showCaptainModal, setShowCaptainModal] = useState(false)
-
 interface DashboardLayoutProps {
   children: React.ReactNode;
 }
@@ -154,9 +162,22 @@ interface DashboardLayoutProps {
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const pathname = usePathname();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [userRole, setUserRole] = useState<"captain" | "owner">(() => {
+    // Check localStorage on initial render
+    if (typeof window !== "undefined") {
+      return (
+        (localStorage.getItem("userRole") as "captain" | "owner") || "captain"
+      );
+    }
+    return "captain";
+  });
 
+  // Filter navigation based on current role
   const filteredNavigation = navigation.filter(
-    (item) => !item.role || hasRole(item.role)
+    (item) =>
+      !item.role ||
+      item.role === userRole ||
+      (item.role === "admin" && hasRole("admin"))
   );
 
   const NavContent = () => (
@@ -187,21 +208,35 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
             );
           })}
 
+          {/* Profile Link */}
+          <Link
+            href={
+              userRole === "captain" ? "/profile/captain" : "/profile/owner"
+            }
+            className={cn(
+              "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent",
+              pathname.includes("/profile") ? "bg-accent" : "transparent"
+            )}
+          >
+            <Settings className="h-4 w-4" />
+            My Profile
+          </Link>
+
           {/* Administrative Section */}
           {(hasRole("admin") || hasRole("captain")) && (
             <>
               <div className="mx-3 my-2 text-xs font-semibold text-muted-foreground">
                 Administrative
               </div>
-              {adminNavigation.map((item) => {
-                const isActive = pathname === item.href;
-                return (
+              {adminNavigation
+                .filter((item) => item.role === "all" || item.role === userRole)
+                .map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
                     className={cn(
                       "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent",
-                      isActive ? "bg-accent" : "transparent"
+                      pathname === item.href ? "bg-accent" : "transparent"
                     )}
                     onClick={() => setIsMobileOpen(false)}
                   >
@@ -213,8 +248,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                       </span>
                     </div>
                   </Link>
-                );
-              })}
+                ))}
             </>
           )}
         </nav>
@@ -322,9 +356,6 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
     setShowCaptainAlert(false);
   };
 
-  // User role check - in a real app, this would come from auth context
-  const userRole = "captain"; // or "owner"
-
   return (
     <div className="flex min-h-screen">
       <aside className="hidden w-64 flex-col border-r lg:flex">
@@ -347,27 +378,47 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
           >
             <Menu className="h-5 w-5" />
           </Button>
-          <div className="flex flex-1 items-center gap-4">
-            <form className="flex-1">
-              <input
-                type="search"
-                placeholder="Search..."
-                className="h-9 w-full rounded-lg border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring"
-              />
-            </form>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => {
-                if (userRole === "captain") {
-                  setShowTripModal(true);
-                } else if (userRole === "owner") {
-                  setShowCaptainModal(true);
-                }
-              }}
-            >
-              <Bell className="h-5 w-5" />
-            </Button>
+          <div className="flex flex-1 items-center justify-between">
+            <div className="flex items-center gap-4">
+              <form className="flex-1">
+                <input
+                  type="search"
+                  placeholder="Search..."
+                  className="h-9 w-full rounded-lg border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring"
+                />
+              </form>
+            </div>
+            <div className="flex items-center gap-4">
+              {/* Role Toggle */}
+              <div className="flex items-center gap-2">
+                <Label htmlFor="role-toggle" className="text-sm font-medium">
+                  {userRole === "captain" ? "Captain Mode" : "Owner Mode"}
+                </Label>
+                <Switch
+                  id="role-toggle"
+                  checked={userRole === "owner"}
+                  onCheckedChange={(checked) => {
+                    const newRole = checked ? "owner" : "captain";
+                    setUserRole(newRole);
+                    localStorage.setItem("userRole", newRole);
+                  }}
+                />
+              </div>
+
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => {
+                  if (userRole === "captain") {
+                    setShowTripModal(true);
+                  } else {
+                    setShowCaptainModal(true);
+                  }
+                }}
+              >
+                <Bell className="h-5 w-5" />
+              </Button>
+            </div>
           </div>
         </header>
         <main className="flex-1 overflow-y-auto bg-muted/10 px-4">

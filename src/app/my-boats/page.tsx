@@ -106,11 +106,18 @@ export default function MyBoatsPage() {
   return (
     <DashboardLayout>
       <div className="container py-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold">My Boats</h1>
-          <p className="mt-2 text-muted-foreground">
-            Manage the boats you captain
-          </p>
+        <div className="mb-8 flex flex-row items-center justify-between">
+          <div className="flex flex-col">
+            <h1 className="text-3xl font-bold">My Boats</h1>
+            <p className="mt-2 text-muted-foreground">
+              Manage the boats you captain
+            </p>
+          </div>
+          <div className="rounded-lg border bg-muted/50 p-4 text-center">
+            <Button size="lg" asChild>
+              <Link href="/boats">Find Boats to Captain</Link>
+            </Button>
+          </div>
         </div>
 
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -134,18 +141,6 @@ export default function MyBoatsPage() {
               <SelectItem value="maintenance">Maintenance</SelectItem>
             </SelectContent>
           </Select>
-        </div>
-
-        <div className="mb-12 mt-12 rounded-lg border bg-muted/50 p-8 text-center">
-          <h2 className="text-2xl font-bold">
-            Looking for More Boats to Captain?
-          </h2>
-          <p className="mt-2 text-muted-foreground">
-            Browse available boats in your area and expand your fleet.
-          </p>
-          <Button size="lg" className="mt-6" asChild>
-            <Link href="/boats">Find Boats to Captain</Link>
-          </Button>
         </div>
 
         <div className="grid gap-6 my-8">
